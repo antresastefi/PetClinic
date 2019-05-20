@@ -7,11 +7,7 @@ pipeline{
         //groovy 'Groovy_Home'
     }
     stages{
-        stage('checkout'){
-            steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'admin', url: 'https://github.com/antresastefi/PetClinic.git']]])
-            }
-        }
+        
        stage('Build'){
             steps{
               bat '''cd %WORKSPACE%\\Petclinic\\spring-petclinic-master\\main
